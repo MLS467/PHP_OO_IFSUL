@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #dddddd;
+}
+
+#caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    height: 50% !important;
+}
+
+form {
+    color: white;
+    background-image: url(../img_teste/1335184-black-friday-sale-with-golden-card-background-gratis-vetor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+button {
+    width: 100px;
+}
+
+#erroDiv {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
