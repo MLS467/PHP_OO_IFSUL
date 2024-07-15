@@ -6,11 +6,12 @@ body {
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
-    background-image: url('../img_teste/1335184-black-friday-sale-with-golden-card-background-gratis-vetor.jpg');
+    background-color: #333 !important;
+    /* background-image: url('../img_teste/1335184-black-friday-sale-with-golden-card-background-gratis-vetor.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: 20%;
-    background-size: cover;
+    background-size: cover; */
 }
 
 .borda {
@@ -23,8 +24,9 @@ body {
 
 .pai {
     width: 100% !important;
+    height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
 }
@@ -35,11 +37,12 @@ body {
 }
 
 #caixa {
+    margin: auto auto;
     /* border: 1px solid red; */
     display: flex;
     width: 100%;
     height: auto;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: row;
 }
@@ -74,7 +77,7 @@ img {
 }
 
 #imgCard {
-    width: 100%;
+    width: 90%;
     height: 90%;
     /* border: 1px solid red; */
     display: flex;
@@ -88,7 +91,9 @@ img {
 }
 
 #tamanhoCard {
-    width: 33%;
+    /* border: 3px solid red; */
+    margin: 0px 5px;
+    width: 30%;
     height: 90%;
 }
 

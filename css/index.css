@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-color: black;
+    background-color: #333;
     display: flex;
     justify-content: center;
     align-items: center;

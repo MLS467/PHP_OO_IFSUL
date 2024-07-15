@@ -22,7 +22,7 @@ if ((!isset($_SESSION['email'])) or (!$_SESSION['logado'])) {
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="bg-light">
+<body>
     <!-- inicio -->
     <div class="bd-example m-0 border-0 mb-0 p-5">
         <div class="container">
@@ -131,13 +131,15 @@ if ((!isset($_SESSION['email'])) or (!$_SESSION['logado'])) {
                             alt="foto do produto">
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $valores['nome']; ?></h5>
-                            <p class="card-text"><?php echo $valores['descricao']; ?></p>
-                            <p class="card-text"><small class="text-body-secondary">última Atualização
-                                    <?php echo date("M d, Y, h:i s"); ?></small></p>
+                        <form action="edicao_exclusao_prod.php" method="POST" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <h5 class="card-title"><input name="nome" class="form-control" type="text"
+                                        value="<?php echo $valores['nome']; ?>"></h5>
+                                <p class="card-text"><input name="desc" class="form-control" type="text"
+                                        value="<?php echo $valores['descricao']; ?>"></p>
+                                <p class="card-text"><small class="text-body-secondary">última Atualização
+                                        <?php echo date("M d, Y, h:i s"); ?></small></p>
 
-                            <form action="edicao_exclusao_prod.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo $valores['id']; ?>">
                                 <input type="hidden" name="imgVelha" value="<?php echo "img/$imagem"; ?>">
 
@@ -151,33 +153,38 @@ if ((!isset($_SESSION['email'])) or (!$_SESSION['logado'])) {
                                     <label for="quantidade">Quantidade:</label>
                                     <input class="form-control" type="number" name="quantidade" id="quantidade" step="1"
                                         min="1" value="1">
+                                    <input style="height: 5%;" class="form-control mt-2" type="file" name="img" id="img"
+                                        value="<?php echo $valores['imagem']; ?>">
                                 </div>
 
+
+
+
                                 <div class="d-flex justify-content-between mt-3">
-                                    <button style="width:20%; height:20%" type="submit" class="btn btn-success"
+                                    <button style="width:30%" type="submit" class="btn btn-success"
                                         name="addCarrinho"><img src="../icon/carrinho.png" alt="Comprar"></button>
                                     <button type="submit" class="btn btn-warning" name="editar"><img
                                             style="width: 32px;" src="../icon/edit.png" alt="Editar"></button>
                                     <button type="submit" class="btn btn-danger" name="excluir"><img
                                             style="width: 32px;" src="../icon/delete.png" alt="delete"></button>
                                 </div>
-                            </form>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
-            <?php }
+        <?php }
             } else { ?>
 
-            <div id="semConteudo">
-                <h1>Sem produtos disponíveis :( </h1>
-            </div>
-
-            <?php } ?>
+        <div id="semConteudo">
+            <h1>Sem produtos disponíveis :( </h1>
         </div>
+
+        <?php } ?>
+    </div>
     </div>
 
     <script src="../js/index.js" type="module"></script>

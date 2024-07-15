@@ -18,7 +18,7 @@ if (isset($_POST['enviar'])) {
         $produto = new Produto($nome, $desc, $img, $valor);
 
         if ($produto->inserirDados()) {
-            echo 'Dados inseridos com sussesso!';
+            header("location:listagem_prod.php");
         } else {
             echo 'Preencha todos os campos e confira os dados solicitados';
         }
@@ -28,4 +28,3 @@ if (isset($_POST['enviar'])) {
 }
 ?>
 <br><br><a href='./Listagem_prod.php'>Voltar</a><br><br>
-<a href="./pessoa/sair.php">SAIR</a>

@@ -2,9 +2,17 @@
 require_once('../autoload.php');
 require_once('../class/config.php');
 
-$img = $_FILES['img']['name'];
-$img_tmp = $_FILES['img']['tmp_name'];
-$img_tam = $_FILES['img']['size'];
+$path = "../img/";
+if (!empty($_FILES['img']['name'])) {
+    $img = $_FILES['img']['name'];
+    $img_tmp = $_FILES['img']['tmp_name'];
+    $img_tam = $_FILES['img']['size'];
+} else {
+    $img = "imgPadrao/fotoPadrao.png";
+    $img_tmp = '';
+    $img_tam = "2";
+}
+
 
 $id = $_POST['id'];
 $nome = $_POST['nome'];
@@ -20,19 +28,18 @@ if (isset($_POST['excluir'])) {
 } else {
     if (isset($_POST['editar'])) {
         $validar = new Validacao();
-        $path = "../img/";
 
         if ($validar->ValidaArq($img, $img_tam)) {
-
-            $senha_cript = sha1($senha);
-
             move_uploaded_file($img_tmp, $path . $img);
+        }
 
-            $pessoa = new Pessoa($nome, $email, $data, $senha, $img);
+        $senha_cript = sha1($senha);
 
-            if ($pessoa->atualizarDados($id)) {
-                echo "EDIÇÃO REALIZADA COM SUSSESSO!";
-            }
+
+        $pessoa = new Pessoa($nome, $email, $data, $senha, $img);
+
+        if ($pessoa->atualizarDados($id)) {
+            echo "EDIÇÃO REALIZADA COM SUSSESSO!";
         }
     }
 }
