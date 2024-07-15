@@ -9,10 +9,10 @@ require_once('autoload.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Login</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@ require_once('autoload.php');
         <div class="text-center mb-4">
             <h1><strong>Login</strong></h1>
         </div>
-        <form class="border shadow p-4 bg-body-tertiary rounded" action="pessoa/valida_login.php" method="POST">
+        <form class="w-50 shadow p-4 rounded" action="pessoa/valida_login.php" method="POST">
             <div class="mb-3 row">
                 <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
@@ -41,7 +41,7 @@ require_once('autoload.php');
                     <?php } ?>
                 </div>
             </div>
-            <div class="text-center mb-3">
+            <div id="btnCaixa" class="text-center mb-3">
                 <button type="submit" name="Login" class="btn btn-dark px-4">Entrar</button>
                 <button type="reset" class="btn btn-dark px-4">Limpar</button>
             </div>

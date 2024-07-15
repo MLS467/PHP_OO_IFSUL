@@ -1,50 +1,68 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-    padding: 0;
+    width: 100%;
     height: 100vh;
+    /* border: 1px solid red; */
     background-color: #333;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #dddddd;
-}
-
-#caixa {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-radius: 0.5rem;
-    padding: 2rem;
-    width: 90%;
-    max-width: 600px;
-    height: 50% !important;
+    width: 50%;
+    height: 50%;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-form {
-    color: white;
-    background-image: url(../img_teste/1335184-black-friday-sale-with-golden-card-background-gratis-vetor.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+#btnCaixa {
+    display: flex;
     width: 100%;
-    padding: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
-button {
-    width: 100px;
+#btnCaixa button {
+    margin: 0px 10px;
+
 }
 
-#erroDiv {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
+
+.form-control {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+.form-control:focus {
+    background-color: #666;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.border-danger {
+    border-color: #dc3545 !important;
+}
+
+.btn-dark {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-dark:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+#caixa h1 {
+    color: #fff;
 }
